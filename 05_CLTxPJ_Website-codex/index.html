@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora CLT x CNPJ - Simule e Compare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F6F9;
+            color: #333;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .text-brand { color: #0047BB; }
+        .bg-brand { background-color: #0047BB; }
+        .bg-brand:hover { background-color: #003388; }
+        .card-shadow {
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+        }
+        .input-field { transition: all 0.2s; }
+        .input-field:focus {
+            border-color: #0047BB;
+            box-shadow: 0 0 0 3px rgba(0, 71, 187, 0.1);
+        }
+        /* Animação de carregamento */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #0047BB;
+            width: 20px;
+            height: 20px;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 text-white p-1.5 rounded-lg font-bold text-xl">CP</div>
+                    <span class="font-bold text-gray-800 text-lg tracking-tight">Calculadora CLT x CNPJ</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#como-funciona" class="text-gray-600 hover:text-blue-600 font-medium transition">Como funciona</a>
+                    <a href="#beneficios" class="text-gray-600 hover:text-blue-600 font-medium transition">Vantagens</a>
+                    <a href="#blog" class="text-gray-600 hover:text-blue-600 font-medium transition">Blog</a>
+                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" rel="noopener noreferrer" class="bg-brand text-white px-5 py-2.5 rounded-full font-semibold hover:shadow-lg transition transform hover:-translate-y-0.5">
+                        Baixar App
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section com Simulador -->
+    <div id="como-funciona" class="relative overflow-hidden bg-white pb-16 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                
+                <!-- Texto Hero -->
+                <div class="max-w-2xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-6">
+                        Disponível para iOS
+                    </span>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        CLT ou CNPJ? Descubra qual vale mais a pena.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Não perca dinheiro na hora de negociar seu salário. Faça uma simulação rápida agora e baixe o app para uma análise detalhada com impostos e benefícios reais.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white rounded-lg hover:bg-black transition shadow-lg">
+                            <svg class="w-6 h-6 mr-2" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg>
+                            Baixar na App Store
+                        </a>
+                        
+                        <!-- Botão Android (Em Breve) -->
+                        <button class="flex items-center justify-center px-8 py-3.5 bg-gray-100 text-gray-500 rounded-lg border border-gray-200 cursor-not-allowed transition select-none" disabled>
+                            <svg class="w-6 h-6 mr-2 opacity-60 grayscale" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z"/></svg>
+                            <span>Android <span class="ml-2 text-xs font-bold uppercase bg-gray-200 text-gray-600 px-2 py-1 rounded">Em breve</span></span>
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" alt="User">
+                        </div>
+                        <p>Junte-se a milhares de profissionais</p>
+                    </div>
+                </div>
+
+                <!-- Card Simulador -->
+                <div class="relative">
+                    <!-- Elemento decorativo de fundo -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-20"></div>
+                    
+                    <div class="relative bg-white rounded-2xl p-6 sm:p-8 card-shadow border border-gray-100">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Simulação Rápida</h3>
+                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-medium">Gratuito</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Salário Bruto CLT</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-3.5 text-gray-400">R$</span>
+                                    <input type="number" id="input-clt" value="6000" min="0" step="100" class="input-field w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none text-gray-800 font-medium" placeholder="0,00" oninput="calculate()">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Proposta CNPJ (Mensal)</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-3.5 text-gray-400">R$</span>
+                                    <input type="number" id="input-pj" value="9500" min="0" step="100" class="input-field w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none text-gray-800 font-medium" placeholder="0,00" oninput="calculate()">
+                                </div>
+                            </div>
+
+                            <!-- Resultados -->
+                            <div class="bg-gray-50 rounded-xl p-5 mt-6 border border-gray-100">
+                                <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Estimativa Anual Líquida</p>
+                                
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-600">CLT (com benefícios)</span>
+                                    <span id="res-clt" class="font-bold text-gray-800 text-lg">R$ 0,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                                    <div id="bar-clt" class="bg-gray-400 h-2 rounded-full" style="width: 50%"></div>
+                                </div>
+
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-600">CNPJ (Simples Nacional)</span>
+                                    <span id="res-pj" class="font-bold text-blue-600 text-lg">R$ 0,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div id="bar-pj" class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 text-center">
+                                <p id="verdict" class="text-sm font-medium text-gray-600 mb-4" aria-live="polite">Analisando...</p>
+                                
+                                <!-- Botão de Análise IA -->
+                                <div class="mb-4">
+                                    <button onclick="handleAnalysisClick()" id="btn-ia" class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition flex items-center justify-center mx-auto mb-2">
+                                        ✨ Ver Análise de Carreira com IA
+                                    </button>
+                                    <div id="ia-result" class="hidden text-left text-sm text-gray-600 bg-blue-50 p-3 rounded-lg border border-blue-100 italic"></div>
+                                </div>
+
+                                <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" rel="noopener noreferrer" class="block w-full bg-brand text-white text-center font-bold py-3.5 rounded-lg hover:bg-blue-800 transition">
+                                    Ver Cálculo Completo no App
+                                </a>
+                                <p class="text-xs text-gray-400 mt-3 text-center">
+                                    *Valores estimados. Baixe o app para cálculo exato de IR, INSS e benefícios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Confiança/Logos -->
+    <div class="bg-gray-50 py-10 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">Ideal para profissionais de</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale">
+                <span class="text-xl font-bold font-serif">Tecnologia</span>
+                <span class="text-xl font-bold font-serif">Saúde</span>
+                <span class="text-xl font-bold font-serif">Engenharia</span>
+                <span class="text-xl font-bold font-serif">Marketing</span>
+                <span class="text-xl font-bold font-serif">Consultoria</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Por que usar nosso app?</h2>
+                <p class="text-gray-600 text-lg">Muitas calculadoras online escondem os custos reais. Nosso app considera tudo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Cálculo Preciso</h3>
+                    <p class="text-gray-600">Consideramos INSS, IRPF, Férias, 13º, FGTS e até custos mensais do CNPJ como contador.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Simples Nacional vs Lucro Presumido</h3>
+                    <p class="text-gray-600">O app seleciona automaticamente o melhor anexo tributário para o seu perfil.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Relatórios PDF</h3>
+                    <p class="text-gray-600">Gere um PDF detalhado da simulação para apresentar ao recrutador ou guardar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Blog e Conteúdo</h2>
+                    <p class="text-gray-600 text-lg">Dicas essenciais sobre carreira, finanças e legislação trabalhista.</p>
+                </div>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition flex items-center">
+                    Ver todos os artigos <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden group flex flex-col h-full">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Planejamento Financeiro" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Carreira</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                            <span>20 Dez, 2024</span>
+                            <span>&bull;</span>
+                            <span>5 min de leitura</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">CNPJ tem direito a férias? Entenda como negociar.</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Muitos profissionais PJ não sabem, mas é possível incluir cláusulas de descanso remunerado no contrato de prestação de serviços...</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
+                            <span class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden group flex flex-col h-full">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Cálculo de Impostos" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Finanças</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                            <span>18 Dez, 2024</span>
+                            <span>&bull;</span>
+                            <span>4 min de leitura</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">Simples Nacional ou Lucro Presumido: Qual o melhor para TI?</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">A escolha do regime tributário correto pode economizar milhares de reais por ano. Descubra qual anexo se aplica ao seu CNAE...</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
+                            <span class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden group flex flex-col h-full">
+                    <div class="relative h-48 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Contrato de Trabalho" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Legislação</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                            <span>15 Dez, 2024</span>
+                            <span>&bull;</span>
+                            <span>6 min de leitura</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">O que muda com a nova Reforma Tributária para CNPJs?</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Fique por dentro das discussões mais recentes sobre a reforma tributária e como ela pode impactar a alíquota efetiva...</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
+                            <span class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-2xl font-bold">Calculadora CLT x CNPJ</h2>
+                    <p class="text-gray-400 mt-2">Tome a melhor decisão para sua carreira.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 items-center">
+                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" rel="noopener noreferrer">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1599388800" alt="Baixe na App Store" class="h-12 w-auto">
+                    </a>
+                    <!-- Botão Footer Android -->
+                    <div class="flex items-center h-12 px-4 rounded-lg border border-gray-700 bg-gray-800 text-gray-500 cursor-not-allowed select-none">
+                        <svg class="w-5 h-5 mr-2 opacity-50" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z"/></svg>
+                        <span class="text-sm font-medium">Android em breve</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2024. Todos os direitos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacidade</a>
+                    <a href="#" class="hover:text-white transition">Termos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // CONFIGURAÇÃO DA API KEY - Insira sua chave aqui
+        const apiKey = ""; 
+        const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
+
+        function formatMoney(value) {
+            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calculate() {
+            const clt = Math.max(0, parseFloat(document.getElementById('input-clt').value) || 0);
+            const pj = Math.max(0, parseFloat(document.getElementById('input-pj').value) || 0);
+
+            // Simulação Simplificada para Landing Page (O app faz o cálculo real completo)
+            // CLT: (Salário * 13.3) - aprox 20% descontos
+            const cltTotal = (clt * 13.33) * 0.82; 
+            
+            // PJ: (Faturamento * 12) - aprox 10% impostos (Simples)
+            const pjTotal = (pj * 12) * 0.90;
+
+            const resClt = document.getElementById('res-clt');
+            const resPj = document.getElementById('res-pj');
+            const verdict = document.getElementById('verdict');
+            const barClt = document.getElementById('bar-clt');
+            const barPj = document.getElementById('bar-pj');
+
+            resClt.innerText = formatMoney(cltTotal);
+            resPj.innerText = formatMoney(pjTotal);
+
+            // Animação das barras
+            const max = Math.max(cltTotal, pjTotal);
+            const safeMax = max > 0 ? max * 1.1 : 1;
+            const cltPercent = (cltTotal / safeMax) * 100;
+            const pjPercent = (pjTotal / safeMax) * 100;
+
+            barClt.style.width = `${cltPercent}%`;
+            barPj.style.width = `${pjPercent}%`;
+
+            if (pjTotal > cltTotal) {
+                const diff = pjTotal - cltTotal;
+                verdict.innerHTML = `CNPJ rende aprox. <span class="text-green-600 font-bold">+${formatMoney(diff)}</span> por ano`;
+                resPj.classList.add('text-green-600');
+                barPj.classList.remove('bg-blue-600');
+                barPj.classList.add('bg-green-600');
+            } else if (cltTotal > pjTotal) {
+                const diff = cltTotal - pjTotal;
+                verdict.innerHTML = `CLT rende aprox. <span class="text-blue-600 font-bold">+${formatMoney(diff)}</span> por ano`;
+                resPj.classList.remove('text-green-600');
+                resPj.classList.add('text-blue-600');
+                barPj.classList.remove('bg-green-600');
+                barPj.classList.add('bg-blue-600');
+            } else {
+                verdict.innerText = "CLT e CNPJ ficam equivalentes nesta estimativa.";
+                resPj.classList.remove('text-green-600');
+                resPj.classList.add('text-blue-600');
+                barPj.classList.remove('bg-green-600');
+                barPj.classList.add('bg-blue-600');
+            }
+        }
+
+        // --- Lógica de IA (Gemini) ---
+
+        async function fetchWithExponentialBackoff(url, options, maxRetries = 5) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) return response;
+                    if (response.status === 429 && i < maxRetries - 1) {
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        continue;
+                    }
+                    throw new Error(`API Error: ${response.statusText}`);
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                    const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+
+        async function handleAnalysisClick() {
+            const btn = document.getElementById('btn-ia');
+            const resultDiv = document.getElementById('ia-result');
+            const clt = document.getElementById('input-clt').value;
+            const pj = document.getElementById('input-pj').value;
+
+            if(!apiKey) {
+                resultDiv.innerText = "Erro: Configure a API Key no código fonte para usar a IA.";
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+
+            // Estado de loading
+            btn.innerHTML = '<div class="loader mr-2"></div> Analisando...';
+            btn.disabled = true;
+            resultDiv.classList.add('hidden');
+
+            const systemPrompt = "Você é um consultor de carreira e finanças brasileiro. Seu objetivo é fornecer uma análise qualitativa curta (1 parágrafo), focando em estilo de vida e estabilidade, comparando o valor CLT e CNPJ informados. Não faça cálculos matemáticos complexos, foque no qualitativo.";
+            const userQuery = `Salário CLT: R$ ${clt}. Faturamento CNPJ: R$ ${pj}. Qual a melhor escolha considerando perfil de risco?`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+
+            try {
+                const response = await fetchWithExponentialBackoff(`${apiUrl}?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Não foi possível gerar a análise.";
+                
+                resultDiv.innerHTML = `<strong>Análise do Consultor IA:</strong><br>${text}`;
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                console.error(error);
+                resultDiv.innerText = "Erro ao conectar com o consultor IA. Tente novamente.";
+                resultDiv.classList.remove('hidden');
+            } finally {
+                btn.innerHTML = '✨ Ver Análise de Carreira com IA';
+                btn.disabled = false;
+            }
+        }
+
+        // Run on load
+        calculate();
+    </script>
+</body>
+</html>
