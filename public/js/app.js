@@ -185,7 +185,7 @@ async function handleAnalysisClick() {
 
 function buildAnalysisPreview(cltVal, pjVal) {
     if (!cltVal && !pjVal) {
-        return "<strong>Análise Profissional (Preview):</strong><br>Informe valores de CLT e PJ para gerar uma leitura comparativa.";
+        return "<strong>Leitura Comparativa:</strong><br>Informe valores de CLT e PJ para gerar uma leitura comparativa.";
     }
 
     const base = cltVal > 0 ? cltVal : pjVal;
@@ -223,7 +223,7 @@ function buildAnalysisPreview(cltVal, pjVal) {
 
     const selected = ranges.find(range => pct <= range.max) || ranges[ranges.length - 1];
     const directionLabel = diff >= 0 ? "PJ" : "CLT";
-    const prefix = "<strong>Análise Profissional (Preview):</strong>";
+    const prefix = "<strong>Leitura Comparativa:</strong>";
     const deltaLine = `Diferença mensal estimada: ${directionLabel} +${diffLabel}.`;
     return `${prefix}<br>${selected.msg}<br><span class="text-xs text-gray-500">${deltaLine}</span>`;
 }
