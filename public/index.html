@@ -62,16 +62,16 @@
                         Não perca dinheiro na hora de negociar seu salário. Faça uma simulação rápida agora e baixe o app para uma análise detalhada com impostos e benefícios reais.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white rounded-lg hover:bg-black transition shadow-lg">
+                        <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="flex items-center justify-center h-12 w-full sm:w-64 bg-gray-900 text-white rounded-lg hover:bg-black transition shadow-lg">
                             <svg class="w-6 h-6 mr-2" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg>
                             Baixar na App Store
                         </a>
                         
-                        <!-- Botão Android (Agora com Interaction) -->
-                        <button onclick="handleAndroidClick()" class="flex items-center justify-center px-8 py-3.5 bg-gray-100 text-gray-500 rounded-lg border border-gray-200 hover:bg-gray-200 hover:text-gray-700 transition select-none">
+                        <!-- Botão Android -->
+                        <a href="android-waitlist.html" class="flex items-center justify-center h-12 w-full sm:w-64 bg-gray-100 text-gray-500 rounded-lg border border-gray-200 hover:bg-gray-200 hover:text-gray-700 transition select-none">
                             <svg class="w-6 h-6 mr-2 opacity-60" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z"/></svg>
-                            <span>Android <span class="ml-2 text-xs font-bold uppercase bg-gray-200 text-gray-600 px-2 py-1 rounded">Lista de Espera</span></span>
-                        </button>
+                            <span>Android <span class="ml-2 text-xs font-bold uppercase bg-gray-200 text-gray-600 px-2 py-1 rounded">Em breve</span></span>
+                        </a>
                     </div>
                     <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
                         <div class="flex -space-x-2">
@@ -136,9 +136,24 @@
                                 <!-- Botão de Análise IA -->
                                 <div class="mb-4">
                                     <button onclick="handleAnalysisClick()" id="btn-ia" class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition flex items-center justify-center mx-auto mb-2">
-                                        ✨ Ver Análise de Carreira com IA
+                                        Ver Análise Profissional (Preview)
                                     </button>
                                     <div id="ia-result" class="hidden text-left text-sm text-gray-600 bg-blue-50 p-3 rounded-lg border border-blue-100 italic"></div>
+                                </div>
+                                <div class="flex flex-col items-center gap-3 mb-2">
+                                    <button id="btn-analise-pro" class="text-xs font-semibold text-gray-700 border border-gray-200 px-3 py-2 rounded-full hover:border-gray-300 hover:text-gray-900 transition inline-flex items-center justify-center w-full sm:w-64">
+                                        Quero uma analise mais profunda
+                                    </button>
+                                    <div id="analise-opcoes" class="hidden w-full">
+                                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                                            <a href="https://wa.me/55SEUNUMERO?text=Quero%20uma%20analise%20de%20carreira%20CLT%20x%20PJ" class="text-xs font-semibold text-gray-700 border border-gray-200 px-3 py-2 rounded-full hover:border-gray-300 hover:text-gray-900 transition inline-flex items-center justify-center w-full sm:w-56">
+                                                Falar no WhatsApp
+                                            </a>
+                                            <a href="mailto:contato@calccltxpj.com.br?subject=Analise%20de%20Carreira%20CLT%20x%20PJ" class="text-xs font-semibold text-gray-700 border border-gray-200 px-3 py-2 rounded-full hover:border-gray-300 hover:text-gray-900 transition inline-flex items-center justify-center w-full sm:w-56">
+                                                Enviar por email
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="block w-full bg-brand text-white text-center font-bold py-3.5 rounded-lg hover:bg-blue-800 transition">
@@ -159,12 +174,41 @@
     <div class="bg-gray-50 py-10 border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">Ideal para profissionais de</p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale">
-                <span class="text-xl font-bold font-serif">Tecnologia</span>
-                <span class="text-xl font-bold font-serif">Saúde</span>
-                <span class="text-xl font-bold font-serif">Engenharia</span>
-                <span class="text-xl font-bold font-serif">Marketing</span>
-                <span class="text-xl font-bold font-serif">Consultoria</span>
+            <div class="overflow-hidden marquee-fade">
+                <div class="marquee-track text-left opacity-70 grayscale">
+                    <div class="marquee-row">
+                        <span class="text-xl font-bold font-serif">Tecnologia</span>
+                        <span class="text-xl font-bold font-serif">Design</span>
+                        <span class="text-xl font-bold font-serif">Marketing</span>
+                        <span class="text-xl font-bold font-serif">Produto</span>
+                        <span class="text-xl font-bold font-serif">Engenharia</span>
+                        <span class="text-xl font-bold font-serif">Consultoria</span>
+                        <span class="text-xl font-bold font-serif">Saúde</span>
+                        <span class="text-xl font-bold font-serif">Jurídico</span>
+                        <span class="text-xl font-bold font-serif">Arquitetura</span>
+                        <span class="text-xl font-bold font-serif">Educação</span>
+                        <span class="text-xl font-bold font-serif">Finanças</span>
+                        <span class="text-xl font-bold font-serif">Audiovisual</span>
+                        <span class="text-xl font-bold font-serif">Vendas</span>
+                        <span class="text-xl font-bold font-serif">RH</span>
+                    </div>
+                    <div class="marquee-row" aria-hidden="true">
+                        <span class="text-xl font-bold font-serif">Tecnologia</span>
+                        <span class="text-xl font-bold font-serif">Design</span>
+                        <span class="text-xl font-bold font-serif">Marketing</span>
+                        <span class="text-xl font-bold font-serif">Produto</span>
+                        <span class="text-xl font-bold font-serif">Engenharia</span>
+                        <span class="text-xl font-bold font-serif">Consultoria</span>
+                        <span class="text-xl font-bold font-serif">Saúde</span>
+                        <span class="text-xl font-bold font-serif">Jurídico</span>
+                        <span class="text-xl font-bold font-serif">Arquitetura</span>
+                        <span class="text-xl font-bold font-serif">Educação</span>
+                        <span class="text-xl font-bold font-serif">Finanças</span>
+                        <span class="text-xl font-bold font-serif">Audiovisual</span>
+                        <span class="text-xl font-bold font-serif">Vendas</span>
+                        <span class="text-xl font-bold font-serif">RH</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -237,7 +281,7 @@
                         <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">CNPJ tem direito a férias? Entenda como negociar.</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Muitos profissionais PJ não sabem, mas é possível incluir cláusulas de descanso remunerado no contrato de prestação de serviços...</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
-                            <span class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</span>
+                            <a href="blog/clt-vs-pj.html" class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</a>
                         </div>
                     </div>
                 </article>
@@ -257,7 +301,7 @@
                         <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">Simples Nacional ou Lucro Presumido: Qual o melhor para TI?</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">A escolha do regime tributário correto pode economizar milhares de reais por ano. Descubra qual anexo se aplica ao seu CNAE...</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
-                            <span class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</span>
+                            <a href="blog/beneficios-clt.html" class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</a>
                         </div>
                     </div>
                 </article>
@@ -277,7 +321,7 @@
                         <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">O que muda com a nova Reforma Tributária para CNPJs?</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Fique por dentro das discussões mais recentes sobre a reforma tributária e como ela pode impactar a alíquota efetiva...</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
-                            <span class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</span>
+                            <a href="blog/reforma-tributaria.html" class="text-sm font-semibold text-blue-600 group-hover:underline">Ler artigo completo</a>
                         </div>
                     </div>
                 </article>
@@ -294,21 +338,22 @@
                     <p class="text-gray-400 mt-2">Tome a melhor decisão para sua carreira.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 items-center">
-                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank">
-                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1599388800" alt="Baixe na App Store" class="h-12 w-auto">
+                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="h-12 w-56">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1599388800" alt="Baixe na App Store" class="h-12 w-full object-contain scale-105">
                     </a>
                     <!-- Botão Footer Android -->
-                    <button onclick="handleAndroidClick()" class="flex items-center h-12 px-4 rounded-lg border border-gray-700 bg-gray-800 text-gray-500 hover:text-white hover:border-gray-500 transition select-none">
+                    <a href="android-waitlist.html" class="flex items-center justify-center h-12 w-56 rounded-lg border border-gray-700 bg-gray-800 text-gray-500 hover:text-white hover:border-gray-500 transition select-none">
                         <svg class="w-5 h-5 mr-2 opacity-50" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z"/></svg>
-                        <span class="text-sm font-medium">Android: Entrar na Lista</span>
-                    </button>
+                        <span class="text-sm font-medium">Android: Em breve</span>
+                    </a>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                <p>&copy; 2024. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition">Privacidade</a>
-                    <a href="#" class="hover:text-white transition">Termos</a>
+                    <a href="blog/index.html" class="hover:text-white transition">Blog</a>
+                    <a href="privacy.html" class="hover:text-white transition">Privacidade</a>
+                    <a href="terms.html" class="hover:text-white transition">Termos</a>
                 </div>
             </div>
         </div>

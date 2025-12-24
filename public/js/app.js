@@ -144,17 +144,10 @@ async function handleAnalysisClick() {
             if (CONFIG.mockMode) {
                 // Simulação de delay de rede
                 await new Promise(resolve => setTimeout(resolve, 1500));
-                
+
                 const cltVal = parseCurrency(cltInput.value);
                 const pjVal = parseCurrency(pjInput.value);
-                const diff = pjVal - cltVal;
-                
-                if (diff > 0) {
-                    analysisText = "💡 <strong>Análise Preliminar (Modo Demo):</strong><br>Financeiramente o CNPJ parece mais atrativo neste cenário. Recomenda-se criar uma reserva de emergência de 6 meses, já que você não terá FGTS/Seguro Desemprego. Ideal para perfis mais arrojados.";
-                } else {
-                    analysisText = "🛡️ <strong>Análise Preliminar (Modo Demo):</strong><br>A proposta CLT oferece maior segurança e benefícios indiretos que superam o valor numérico atual do PJ. Mantenha-se na CLT a menos que o PJ ofereça pelo menos 40% de aumento.";
-                }
-                analysisText += "<br><br><em class='text-xs text-gray-400'>(Nota: Adicione uma API Key para análise real com IA)</em>";
+                analysisText = buildAnalysisPreview(cltVal, pjVal);
             } else {
                 throw new Error("Chave de API não configurada.");
             }
@@ -190,10 +183,63 @@ async function handleAnalysisClick() {
     }
 }
 
+function buildAnalysisPreview(cltVal, pjVal) {
+    if (!cltVal && !pjVal) {
+        return "<strong>Análise Profissional (Preview):</strong><br>Informe valores de CLT e PJ para gerar uma leitura comparativa.";
+    }
+
+    const base = cltVal > 0 ? cltVal : pjVal;
+    const diff = pjVal - cltVal;
+    const pct = base > 0 ? diff / base : 0;
+    const diffLabel = formatMoney(Math.abs(diff));
+
+    const ranges = [
+        { max: -0.60, msg: "CLT muito superior. A proposta PJ esta fortemente abaixo do piso de mercado para migracao." },
+        { max: -0.50, msg: "CLT claramente mais forte. PJ exigiria renegociacao ampla para cobrir impostos e risco." },
+        { max: -0.40, msg: "CLT segue bem acima. Considere PJ apenas com ajuste substancial do valor." },
+        { max: -0.35, msg: "CLT ainda vence com folga. Beneficios e estabilidade ampliam essa vantagem." },
+        { max: -0.30, msg: "CLT mais vantajosa. PJ nao compensa perda de beneficios diretos." },
+        { max: -0.25, msg: "CLT melhor no agregado. Um aumento no PJ seria necessario para empatar." },
+        { max: -0.20, msg: "CLT ligeiramente melhor. PJ pode fazer sentido so com ganhos adicionais." },
+        { max: -0.15, msg: "CLT esta na frente. Avalie PJ apenas com custo reduzido e reserva formada." },
+        { max: -0.10, msg: "CLT superior em pequena margem. Negocie PJ com folga para impostos." },
+        { max: -0.07, msg: "CLT levemente melhor. PJ precisa incluir estabilidade minima em contrato." },
+        { max: -0.05, msg: "CLT ainda vence. PJ so vale com beneficios equivalentes e aumento." },
+        { max: -0.02, msg: "CLT por pouco. O risco do PJ pode nao compensar sem reajuste." },
+        { max: 0.02, msg: "Cenarios muito proximos. A decisao deve considerar estabilidade e perfil de risco." },
+        { max: 0.05, msg: "PJ levemente superior. Verifique custos fixos e impostos antes de decidir." },
+        { max: 0.07, msg: "PJ um pouco melhor. Considere formar reserva e revisar contrato." },
+        { max: 0.10, msg: "PJ com vantagem moderada. A troca pode fazer sentido com boa organizacao financeira." },
+        { max: 0.15, msg: "PJ em boa vantagem. Estruture pro-labore, impostos e previsao de caixa." },
+        { max: 0.20, msg: "PJ ganha com consistencia. Garanta contrato com prazo e reajuste." },
+        { max: 0.25, msg: "PJ atrativo. Diferenca tende a cobrir impostos e custos fixos." },
+        { max: 0.30, msg: "PJ bem superior. Priorize protecoes contratuais e reserva robusta." },
+        { max: 0.35, msg: "PJ muito competitivo. Bom momento para negociar clausulas favoraveis." },
+        { max: 0.40, msg: "PJ com folga. A migracao faz sentido se a operacao estiver organizada." },
+        { max: 0.50, msg: "PJ altamente vantajoso. Ainda assim, cuide de impostos e previdencia." },
+        { max: 0.60, msg: "PJ extremamente superior. Reforce governanca, contabilidade e planejamento." },
+        { max: Infinity, msg: "PJ fora do padrao. Revise o contrato e valide custos antes de aceitar." }
+    ];
+
+    const selected = ranges.find(range => pct <= range.max) || ranges[ranges.length - 1];
+    const directionLabel = diff >= 0 ? "PJ" : "CLT";
+    const prefix = "<strong>Análise Profissional (Preview):</strong>";
+    const deltaLine = `Diferença mensal estimada: ${directionLabel} +${diffLabel}.`;
+    return `${prefix}<br>${selected.msg}<br><span class="text-xs text-gray-500">${deltaLine}</span>`;
+}
+
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     setupInputs();
     calculate(); // Calculo inicial
+
+    const proBtn = document.getElementById('btn-analise-pro');
+    const proOptions = document.getElementById('analise-opcoes');
+    if (proBtn && proOptions) {
+        proBtn.addEventListener('click', () => {
+            proOptions.classList.toggle('hidden');
+        });
+    }
     
     // Configura botão android
     const androidBtn = document.querySelector('button disabled') || document.querySelectorAll('button')[1]; // Fallback selector
