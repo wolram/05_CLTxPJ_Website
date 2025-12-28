@@ -6,103 +6,129 @@
     <title>Blog | Calculadora CLT x CNPJ</title>
     <meta name="description" content="Artigos e guias sobre CLT, CNPJ e carreira.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="antialiased bg-gray-50">
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+<body class="antialiased">
+    <nav class="navbar-glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="../index.html" class="flex items-center gap-2">
-                    <div class="bg-blue-600 text-white p-1.5 rounded-lg font-bold text-xl">CP</div>
-                    <span class="font-bold text-gray-800 text-lg tracking-tight">Calculadora CLT x CNPJ</span>
+                <a href="../index.html" class="flex items-center gap-3">
+                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </a>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="../privacy.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Privacidade</a>
-                    <a href="../terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Termos</a>
-                    <a href="../index.html#como-funciona" class="text-gray-600 hover:text-blue-600 font-medium transition">Simulador</a>
+                    <a href="../privacy.html" class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
+                    <a href="../terms.html" class="text-slate-400 hover:text-white font-medium transition">Termos</a>
+                    <a href="../index.html#como-funciona" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-5 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition">Simulador</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="../index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="../index.html#como-funciona" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Simulador</a>
+                <a href="../privacy.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="../terms.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
 
-    <header class="bg-white">
+    <header class="border-b border-slate-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <p class="text-blue-600 font-semibold mb-2">Blog</p>
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-3">Conteudos para decidir entre CLT e CNPJ</h1>
-            <p class="text-gray-600 max-w-2xl">Guias práticos, comparativos e novidades para ajudar na sua negociação e planejamento financeiro.</p>
+            <p class="text-brand font-semibold mb-2">Blog</p>
+            <h1 class="text-4xl font-extrabold text-white mb-3">Conteudos para decidir entre CLT e CNPJ</h1>
+            <p class="text-slate-400 max-w-2xl">Guias praticos, comparativos e novidades para ajudar na sua negociacao e planejamento financeiro.</p>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden group flex flex-col h-full">
-                <div class="relative h-48 overflow-hidden bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" alt="Planilha financeira" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Guia</div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="blog-card group flex flex-col h-full">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" alt="Planilha financeira" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 left-4 tag">Guia</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                    <div class="flex items-center text-xs text-slate-500 mb-3 space-x-2">
                         <span>20 Dez, 2024</span>
                         <span>&bull;</span>
                         <span>5 min de leitura</span>
                     </div>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                    <h2 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">
                         <a href="clt-vs-pj.html">CLT x PJ: como calcular o valor justo na negociacao</a>
                     </h2>
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">Um roteiro simples para estimar impostos, beneficios e margem de seguranca antes de aceitar uma proposta.</p>
-                    <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
-                        <a href="clt-vs-pj.html" class="text-sm font-semibold text-blue-600">Ler artigo</a>
+                    <p class="text-slate-400 text-sm mb-4 line-clamp-3">Um roteiro simples para estimar impostos, beneficios e margem de seguranca antes de aceitar uma proposta.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-800/50 flex items-center">
+                        <a href="clt-vs-pj.html" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition">Ler artigo</a>
                     </div>
                 </div>
             </article>
 
-            <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden group flex flex-col h-full">
-                <div class="relative h-48 overflow-hidden bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80" alt="Profissional analisando dados" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Comparativo</div>
+            <article class="blog-card group flex flex-col h-full">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80" alt="Profissional analisando dados" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 left-4 tag-green">Comparativo</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                    <div class="flex items-center text-xs text-slate-500 mb-3 space-x-2">
                         <span>05 Jan, 2025</span>
                         <span>&bull;</span>
                         <span>4 min de leitura</span>
                     </div>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                    <h2 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">
                         <a href="beneficios-clt.html">Beneficios indiretos da CLT que pesam na conta</a>
                     </h2>
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">FGTS, ferias, 13o e estabilidade: veja como traduzir beneficios em valores mensais.</p>
-                    <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
-                        <a href="beneficios-clt.html" class="text-sm font-semibold text-blue-600">Ler artigo</a>
+                    <p class="text-slate-400 text-sm mb-4 line-clamp-3">FGTS, ferias, 13o e estabilidade: veja como traduzir beneficios em valores mensais.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-800/50 flex items-center">
+                        <a href="beneficios-clt.html" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition">Ler artigo</a>
                     </div>
                 </div>
             </article>
 
-            <article class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition duration-300 overflow-hidden group flex flex-col h-full">
-                <div class="relative h-48 overflow-hidden bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Contrato de trabalho" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Legislacao</div>
+            <article class="blog-card group flex flex-col h-full">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Contrato de trabalho" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    <div class="absolute top-4 left-4 tag-purple">Legislacao</div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                    <div class="flex items-center text-xs text-slate-500 mb-3 space-x-2">
                         <span>15 Jan, 2025</span>
                         <span>&bull;</span>
                         <span>6 min de leitura</span>
                     </div>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                    <h2 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">
                         <a href="reforma-tributaria.html">O que muda com a reforma tributaria para CNPJs</a>
                     </h2>
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">Resumo direto das propostas e o que observar antes de mudar de regime.</p>
-                    <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
-                        <a href="reforma-tributaria.html" class="text-sm font-semibold text-blue-600">Ler artigo</a>
+                    <p class="text-slate-400 text-sm mb-4 line-clamp-3">Resumo direto das propostas e o que observar antes de mudar de regime.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-800/50 flex items-center">
+                        <a href="reforma-tributaria.html" class="text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition">Ler artigo</a>
                     </div>
                 </div>
             </article>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <footer class="footer-glass py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="../index.html" class="hover:text-white transition">Home</a>
@@ -111,5 +137,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+        }
+    </script>
 </body>
 </html>

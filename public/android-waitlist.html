@@ -6,50 +6,74 @@
     <title>Me avise quando estiver disponivel | Calculadora CLT x CNPJ</title>
     <meta name="description" content="Receba um aviso quando o app Android estiver disponivel.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="antialiased bg-gray-50">
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+<body class="antialiased">
+    <nav class="navbar-glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex items-center gap-2">
-                    <div class="bg-blue-600 text-white p-1.5 rounded-lg font-bold text-xl">CP</div>
-                    <span class="font-bold text-gray-800 text-lg tracking-tight">Calculadora CLT x CNPJ</span>
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </a>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="blog/index.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Blog</a>
-                    <a href="privacy.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Privacidade</a>
-                    <a href="terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Termos</a>
+                    <a href="blog/index.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
+                    <a href="privacy.html" class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
+                    <a href="terms.html" class="text-slate-400 hover:text-white font-medium transition">Termos</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="blog/index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="privacy.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="terms.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-            <p class="text-gray-500 text-sm uppercase tracking-wider font-semibold mb-2">Android</p>
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Me avise quando estiver disponivel</h1>
-            <p class="text-gray-600 mb-8">Estamos finalizando a versao Android. Deixe seu email e avisaremos quando o app estiver pronto.</p>
+        <div class="glass-card p-8">
+            <p class="tag text-xs uppercase tracking-wider mb-3">Android</p>
+            <h1 class="text-3xl font-extrabold text-white mb-4">Me avise quando estiver disponivel</h1>
+            <p class="text-slate-400 mb-8">Estamos finalizando a versao Android. Deixe seu email e avisaremos quando o app estiver pronto.</p>
 
-            <div class="rounded-2xl border border-gray-100 bg-white p-0 overflow-hidden">
+            <div class="rounded-2xl glass overflow-hidden">
                 <iframe
                     title="Formulario Brevo"
                     src="https://a0957706.sibforms.com/serve/MUIFAPsNrBYs7ztsJzOkYT5VH67XdeaRdZk1ssfUyvUcJgxML0Kx0bApVj7puOwC_cYvyG8GyLw5OghGTQ89ENDVUo7699PdVXUF_q4bnp7-xmZ2y2AgYP9SABuysRjIk0lTWSPXmKqCe-cE8X2RxWDxGFOhjitRe1DHES8P78DSUDpzsRS6R8n52mGXFBDYSpoNE8yITUHaIEjm8A=="
-                    class="w-full bg-white"
+                    class="w-full bg-transparent"
                     height="440"
                     frameborder="0"
                     scrolling="no"
                     allowfullscreen
+                    style="background: transparent;"
                 ></iframe>
             </div>
-            <p class="text-xs text-gray-400 mt-4">Configure o redirect de sucesso no Brevo para /android-waitlist-success.html.</p>
-            <p class="text-xs text-gray-400 mt-2">Se o formulario nao carregar, acesse: <a class="text-blue-600 hover:underline" href="https://a0957706.sibforms.com/serve/MUIFAPsNrBYs7ztsJzOkYT5VH67XdeaRdZk1ssfUyvUcJgxML0Kx0bApVj7puOwC_cYvyG8GyLw5OghGTQ89ENDVUo7699PdVXUF_q4bnp7-xmZ2y2AgYP9SABuysRjIk0lTWSPXmKqCe-cE8X2RxWDxGFOhjitRe1DHES8P78DSUDpzsRS6R8n52mGXFBDYSpoNE8yITUHaIEjm8A==" target="_blank" rel="noreferrer">Abrir formulario</a>.</p>
+            <p class="text-xs text-slate-500 mt-4">Configure o redirect de sucesso no Brevo para /android-waitlist-success.html.</p>
+            <p class="text-xs text-slate-500 mt-2">Se o formulario nao carregar, acesse: <a class="text-indigo-400 hover:text-indigo-300 transition" href="https://a0957706.sibforms.com/serve/MUIFAPsNrBYs7ztsJzOkYT5VH67XdeaRdZk1ssfUyvUcJgxML0Kx0bApVj7puOwC_cYvyG8GyLw5OghGTQ89ENDVUo7699PdVXUF_q4bnp7-xmZ2y2AgYP9SABuysRjIk0lTWSPXmKqCe-cE8X2RxWDxGFOhjitRe1DHES8P78DSUDpzsRS6R8n52mGXFBDYSpoNE8yITUHaIEjm8A==" target="_blank" rel="noreferrer">Abrir formulario</a>.</p>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <footer class="footer-glass py-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="index.html" class="hover:text-white transition">Home</a>
@@ -57,5 +81,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+        }
+    </script>
 </body>
 </html>

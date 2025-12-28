@@ -6,56 +6,83 @@
     <title>Beneficios indiretos da CLT | Blog</title>
     <meta name="description" content="Entenda como beneficios da CLT impactam o valor total da proposta.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="antialiased bg-gray-50">
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+<body class="antialiased">
+    <nav class="navbar-glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="../index.html" class="flex items-center gap-2">
-                    <div class="bg-blue-600 text-white p-1.5 rounded-lg font-bold text-xl">CP</div>
-                    <span class="font-bold text-gray-800 text-lg tracking-tight">Calculadora CLT x CNPJ</span>
+                <a href="../index.html" class="flex items-center gap-3">
+                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </a>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Blog</a>
-                    <a href="../privacy.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Privacidade</a>
-                    <a href="../terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Termos</a>
+                    <a href="index.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
+                    <a href="../privacy.html" class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
+                    <a href="../terms.html" class="text-slate-400 hover:text-white font-medium transition">Termos</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="../index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="../privacy.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="../terms.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-            <p class="text-green-600 font-semibold mb-2">Comparativo</p>
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-3">Beneficios indiretos da CLT que pesam na conta</h1>
-            <div class="text-sm text-gray-500 mb-8">05 Jan, 2025 · 4 min de leitura</div>
+        <article class="glass-card p-6 sm:p-8">
+            <p class="tag-green text-xs uppercase tracking-wider mb-3">Comparativo</p>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Beneficios indiretos da CLT que pesam na conta</h1>
+            <div class="text-sm text-slate-500 mb-8">05 Jan, 2025 · 4 min de leitura</div>
 
-            <div class="space-y-6 text-gray-700 leading-relaxed">
+            <div class="space-y-6 text-slate-300 leading-relaxed">
                 <p>Ao comparar CLT e PJ, o salario nao conta toda a historia. Beneficios podem representar uma parte relevante do valor total.</p>
 
-                <h2 class="text-xl font-bold text-gray-900">Beneficios que viram dinheiro</h2>
-                <ul class="list-disc pl-5 space-y-2">
+                <h2 class="text-xl font-bold text-white">Beneficios que viram dinheiro</h2>
+                <ul class="list-disc pl-5 space-y-2 text-slate-400">
                     <li>13o salario e ferias remuneradas.</li>
                     <li>FGTS e multa rescisoria.</li>
                     <li>Plano de saude e seguro de vida.</li>
                     <li>VR, VA, auxilio home office e bonus.</li>
                 </ul>
 
-                <h2 class="text-xl font-bold text-gray-900">Como estimar</h2>
-                <p>Some o valor anual de cada beneficio e divida por 12 para obter o impacto mensal. Compare esse numero com o adicional oferecido no PJ.</p>
+                <h2 class="text-xl font-bold text-white">Como estimar</h2>
+                <p class="text-slate-400">Some o valor anual de cada beneficio e divida por 12 para obter o impacto mensal. Compare esse numero com o adicional oferecido no PJ.</p>
 
-                <h2 class="text-xl font-bold text-gray-900">Regra pratica</h2>
-                <p>Se o PJ nao compensar os beneficios e ainda garantir margem para impostos e reserva, a troca pode nao valer.</p>
+                <h2 class="text-xl font-bold text-white">Regra pratica</h2>
+                <p class="text-slate-400">Se o PJ nao compensar os beneficios e ainda garantir margem para impostos e reserva, a troca pode nao valer.</p>
 
-                <p>Use o simulador para visualizar a diferenca anual e ajustar a proposta.</p>
+                <p class="text-slate-400">Use o simulador para visualizar a diferenca anual e ajustar a proposta.</p>
+
+                <div class="pt-6">
+                    <a href="../index.html#como-funciona" class="inline-block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition">Usar o Simulador</a>
+                </div>
             </div>
         </article>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <footer class="footer-glass py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="index.html" class="hover:text-white transition">Blog</a>
@@ -63,5 +90,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+        }
+    </script>
 </body>
 </html>

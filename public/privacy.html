@@ -6,53 +6,75 @@
     <title>Privacidade | Calculadora CLT x CNPJ</title>
     <meta name="description" content="Política de Privacidade da Calculadora CLT x CNPJ.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="antialiased bg-gray-50">
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+<body class="antialiased">
+    <nav class="navbar-glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex items-center gap-2">
-                    <div class="bg-blue-600 text-white p-1.5 rounded-lg font-bold text-xl">CP</div>
-                    <span class="font-bold text-gray-800 text-lg tracking-tight">Calculadora CLT x CNPJ</span>
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </a>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="blog/index.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Blog</a>
-                    <a href="terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition">Termos</a>
+                    <a href="blog/index.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
+                    <a href="terms.html" class="text-slate-400 hover:text-white font-medium transition">Termos</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="blog/index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="terms.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Política de Privacidade</h1>
-            <p class="text-sm text-gray-500 mb-8">Vigente a partir de 01/01/2025</p>
+        <div class="glass-card p-8">
+            <h1 class="text-3xl font-extrabold text-white mb-4">Politica de Privacidade</h1>
+            <p class="text-sm text-slate-500 mb-8">Vigente a partir de 01/01/2025</p>
 
-            <section class="space-y-4 text-gray-700">
-                <p>Esta página descreve como tratamos dados no site da Calculadora CLT x CNPJ. Nosso foco é fornecer uma simulação rápida e conteúdo informativo, com o mínimo de coleta possível.</p>
+            <section class="space-y-6 text-slate-300">
+                <p>Esta pagina descreve como tratamos dados no site da Calculadora CLT x CNPJ. Nosso foco e fornecer uma simulacao rapida e conteudo informativo, com o minimo de coleta possivel.</p>
 
-                <h2 class="text-xl font-bold text-gray-900 pt-2">Dados coletados</h2>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Dados de navegação (ex.: páginas visitadas, tempo de sessão) quando ferramentas de analytics estiverem habilitadas.</li>
-                    <li>Informações inseridas no simulador ficam no navegador e não são enviadas para servidores por padrão.</li>
+                <h2 class="text-xl font-bold text-white pt-2">Dados coletados</h2>
+                <ul class="list-disc pl-5 space-y-2 text-slate-400">
+                    <li>Dados de navegacao (ex.: paginas visitadas, tempo de sessao) quando ferramentas de analytics estiverem habilitadas.</li>
+                    <li>Informacoes inseridas no simulador ficam no navegador e nao sao enviadas para servidores por padrao.</li>
                 </ul>
 
-                <h2 class="text-xl font-bold text-gray-900 pt-2">Uso de cookies</h2>
-                <p>Podemos usar cookies estritamente necessários e, opcionalmente, cookies de analytics para entender o uso do site. Você pode bloquear cookies no navegador.</p>
+                <h2 class="text-xl font-bold text-white pt-2">Uso de cookies</h2>
+                <p class="text-slate-400">Podemos usar cookies estritamente necessarios e, opcionalmente, cookies de analytics para entender o uso do site. Voce pode bloquear cookies no navegador.</p>
 
-                <h2 class="text-xl font-bold text-gray-900 pt-2">IA e análises</h2>
-                <p>Se um endpoint de IA estiver ativo no futuro, dados enviados serão usados apenas para gerar a resposta solicitada. Nunca armazenamos chaves de API no client.</p>
+                <h2 class="text-xl font-bold text-white pt-2">IA e analises</h2>
+                <p class="text-slate-400">Se um endpoint de IA estiver ativo no futuro, dados enviados serao usados apenas para gerar a resposta solicitada. Nunca armazenamos chaves de API no client.</p>
 
-                <h2 class="text-xl font-bold text-gray-900 pt-2">Contato</h2>
-                <p>Dúvidas sobre privacidade: <a href="mailto:contato@calccltxpj.com.br" class="text-blue-600 hover:underline">contato@calccltxpj.com.br</a>.</p>
+                <h2 class="text-xl font-bold text-white pt-2">Contato</h2>
+                <p class="text-slate-400">Duvidas sobre privacidade: <a href="mailto:contato@calccltxpj.com.br" class="text-indigo-400 hover:text-indigo-300 transition">contato@calccltxpj.com.br</a>.</p>
             </section>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <footer class="footer-glass py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="index.html" class="hover:text-white transition">Home</a>
@@ -61,5 +83,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
