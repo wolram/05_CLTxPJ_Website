@@ -50,7 +50,7 @@
     </nav>
 
     <header class="border-b border-slate-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-on-scroll">
             <p class="text-brand font-semibold mb-2">Blog</p>
             <h1 class="text-4xl font-extrabold text-white mb-3">Conteudos para decidir entre CLT e CNPJ</h1>
             <p class="text-slate-400 max-w-2xl">Guias praticos, comparativos e novidades para ajudar na sua negociacao e planejamento financeiro.</p>
@@ -59,7 +59,7 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article class="blog-card group flex flex-col h-full">
+            <article class="blog-card group flex flex-col h-full animate-on-scroll">
                 <div class="relative h-48 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" alt="Planilha financeira" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
@@ -81,7 +81,7 @@
                 </div>
             </article>
 
-            <article class="blog-card group flex flex-col h-full">
+            <article class="blog-card group flex flex-col h-full animate-on-scroll animate-delay-100">
                 <div class="relative h-48 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80" alt="Profissional analisando dados" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
@@ -103,7 +103,7 @@
                 </div>
             </article>
 
-            <article class="blog-card group flex flex-col h-full">
+            <article class="blog-card group flex flex-col h-full animate-on-scroll animate-delay-200">
                 <div class="relative h-48 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Contrato de trabalho" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
@@ -160,6 +160,22 @@
                 });
             });
         }
+    </script>
+
+    <!-- Scroll Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-from-left, .animate-from-right, .animate-scale');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            animatedElements.forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>

@@ -50,7 +50,7 @@
     </nav>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <article class="glass-card p-6 sm:p-8">
+        <article class="glass-card p-6 sm:p-8 animate-on-scroll">
             <p class="tag text-xs uppercase tracking-wider mb-3">Guia</p>
             <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">CLT x PJ: como calcular o valor justo na negociacao</h1>
             <div class="text-sm text-slate-500 mb-8">20 Dez, 2024 · 5 min de leitura</div>
@@ -118,6 +118,22 @@
                 });
             });
         }
+    </script>
+
+    <!-- Scroll Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-from-left, .animate-from-right, .animate-scale');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            animatedElements.forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
