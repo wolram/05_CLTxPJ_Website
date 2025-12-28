@@ -550,6 +550,34 @@ body::before {
     transform: scale(1);
 }
 
+/* Faster animations on mobile */
+@media (max-width: 768px) {
+    .animate-on-scroll {
+        transform: translateY(20px);
+        transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+
+    .animate-from-left {
+        transform: translateX(-20px);
+        transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+
+    .animate-from-right {
+        transform: translateX(20px);
+        transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+
+    .animate-scale {
+        transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    }
+
+    .animate-delay-100 { transition-delay: 0.05s; }
+    .animate-delay-200 { transition-delay: 0.1s; }
+    .animate-delay-300 { transition-delay: 0.15s; }
+    .animate-delay-400 { transition-delay: 0.2s; }
+    .animate-delay-500 { transition-delay: 0.25s; }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
     html {
