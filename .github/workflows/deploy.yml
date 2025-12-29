@@ -6,15 +6,13 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Deploy via FTP
+  ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to FTP
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -22,4 +20,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./public/
           server-dir: /public_html/
-          dangerous-clean-slate: false
