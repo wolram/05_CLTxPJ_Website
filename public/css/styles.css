@@ -433,6 +433,66 @@ body::before {
     }
 }
 
+/* Mobile Menu Animations */
+.mobile-menu-enter {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.mobile-menu-exit {
+    animation: slideUp 0.25s ease-in forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Menu items staggered animation */
+.menu-item {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.menu-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-item:nth-child(1) { transition-delay: 0.05s; }
+.menu-item:nth-child(2) { transition-delay: 0.1s; }
+.menu-item:nth-child(3) { transition-delay: 0.15s; }
+.menu-item:nth-child(4) { transition-delay: 0.2s; }
+.menu-item:nth-child(5) { transition-delay: 0.25s; }
+.menu-item:nth-child(6) { transition-delay: 0.3s; }
+.menu-item:nth-child(7) { transition-delay: 0.35s; }
+
+/* Hamburger icon animation */
+.hamburger-icon {
+    transition: transform 0.3s ease;
+}
+
+.hamburger-icon.rotate {
+    transform: rotate(90deg);
+}
+
 /* ============================================
    SCROLL ANIMATIONS
    ============================================ */

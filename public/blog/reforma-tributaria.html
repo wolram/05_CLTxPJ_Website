@@ -41,10 +41,10 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
             <div class="flex flex-col p-4 space-y-3">
-                <a href="../index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
-                <a href="index.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
-                <a href="../privacy.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
-                <a href="../terms.html" class="text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
+                <a href="../index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="../privacy.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="../terms.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
@@ -93,21 +93,30 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIconOpen = document.getElementById('menu-icon-open');
         const menuIconClose = document.getElementById('menu-icon-close');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        function openMenu() {
+            mobileMenu.classList.remove('hidden', 'mobile-menu-exit');
+            mobileMenu.classList.add('mobile-menu-enter');
+            menuIconOpen.classList.add('hidden');
+            menuIconClose.classList.remove('hidden');
+            setTimeout(() => menuItems.forEach(item => item.classList.add('show')), 100);
+        }
+
+        function closeMenu() {
+            menuItems.forEach(item => item.classList.remove('show'));
+            mobileMenu.classList.remove('mobile-menu-enter');
+            mobileMenu.classList.add('mobile-menu-exit');
+            menuIconOpen.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 250);
+        }
 
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                menuIconOpen.classList.toggle('hidden');
-                menuIconClose.classList.toggle('hidden');
+                mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
             });
-
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuIconOpen.classList.remove('hidden');
-                    menuIconClose.classList.add('hidden');
-                });
-            });
+            mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
         }
     </script>
 
