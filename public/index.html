@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO & Identity -->
     <title>Calculadora CLT x CNPJ - Simule e Compare</title>
-    <meta name="description" content="Compare seu salário CLT vs PJ (CNPJ) gratuitamente. Descubra qual regime vale mais a pena com nossa calculadora de impostos e benefícios.">
+    <meta name="description"
+        content="Compare seu salário CLT vs PJ (CNPJ) gratuitamente. Descubra qual regime vale mais a pena com nossa calculadora de impostos e benefícios.">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Calculadora CLT x CNPJ - Vale a pena virar PJ?">
-    <meta property="og:description" content="Simulação rápida e precisa de salário líquido. Descubra se vale a pena trocar a CLT pelo CNPJ agora mesmo.">
+    <meta property="og:description"
+        content="Simulação rápida e precisa de salário líquido. Descubra se vale a pena trocar a CLT pelo CNPJ agora mesmo.">
     <meta property="og:url" content="https://calculadoracltpj.com.br/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&h=630&q=80">
 
     <!-- Favicon (Inline SVG) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
 
     <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Tailwind Dark Config -->
@@ -48,6 +54,7 @@
         }
     </script>
 </head>
+
 <body class="antialiased">
 
     <!-- Navbar -->
@@ -55,28 +62,36 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-3">
-                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
-                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <img src="logo.jpg" alt="CLT x PJ Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-amber-500/25 object-cover">
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x
+                        CNPJ</span>
                     <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#como-funciona" class="text-slate-400 hover:text-white font-medium transition">Como funciona</a>
+                    <a href="#como-funciona" class="text-slate-400 hover:text-white font-medium transition">Como
+                        funciona</a>
                     <a href="#beneficios" class="text-slate-400 hover:text-white font-medium transition">Vantagens</a>
                     <a href="#blog" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
-                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-5 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition transform hover:-translate-y-0.5">
+                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank"
+                        class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 text-slate-900 px-5 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition transform hover:-translate-y-0.5">
                         Baixar App
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
                     <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
-                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
                     </svg>
                 </button>
             </div>
@@ -85,14 +100,23 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
             <div class="flex flex-col p-4 space-y-3">
-                <a href="#como-funciona" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Como funciona</a>
-                <a href="#beneficios" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Vantagens</a>
-                <a href="#blog" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
-                <a href="blog/index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Todos os Artigos</a>
-                <a href="privacy.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
-                <a href="terms.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
+                <a href="#como-funciona"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Como
+                    funciona</a>
+                <a href="#beneficios"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Vantagens</a>
+                <a href="#blog"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="blog/index.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Todos
+                    os Artigos</a>
+                <a href="privacy.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="terms.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
                 <div class="menu-item pt-2 border-t border-slate-700/50">
-                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="block w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-center px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition">
+                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank"
+                        class="block w-full bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 text-slate-900 text-center px-5 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition">
                         Baixar App
                     </a>
                 </div>
@@ -114,25 +138,42 @@
                         CLT ou CNPJ? <span class="text-brand">Descubra</span> qual vale mais a pena.
                     </h1>
                     <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                        Não perca dinheiro na hora de negociar seu salário. Faça uma simulação rápida agora e baixe o app para uma análise detalhada com impostos e benefícios reais.
+                        Não perca dinheiro na hora de negociar seu salário. Faça uma simulação rápida agora e baixe o
+                        app para uma análise detalhada com impostos e benefícios reais.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="flex items-center justify-center h-14 w-full sm:w-64 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition shadow-lg font-semibold">
-                            <svg class="w-6 h-6 mr-2" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg>
+                        <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank"
+                            class="flex items-center justify-center h-14 w-full sm:w-64 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition shadow-lg font-semibold">
+                            <svg class="w-6 h-6 mr-2" viewBox="0 0 384 512" fill="currentColor">
+                                <path
+                                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z" />
+                            </svg>
                             Baixar na App Store
                         </a>
 
                         <!-- Botão Android -->
-                        <a href="android-waitlist.html" class="flex items-center justify-center h-14 w-full sm:w-64 glass rounded-xl text-slate-400 hover:text-white hover:border-slate-500 transition select-none">
-                            <svg class="w-6 h-6 mr-2 opacity-60" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z"/></svg>
-                            <span>Android <span class="ml-2 text-xs font-bold uppercase bg-slate-700/50 text-slate-400 px-2 py-1 rounded">Em breve</span></span>
+                        <a href="android-waitlist.html"
+                            class="flex items-center justify-center h-14 w-full sm:w-64 glass rounded-xl text-slate-400 hover:text-white hover:border-slate-500 transition select-none">
+                            <svg class="w-6 h-6 mr-2 opacity-60" viewBox="0 0 512 512" fill="currentColor">
+                                <path
+                                    d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z" />
+                            </svg>
+                            <span>Android <span
+                                    class="ml-2 text-xs font-bold uppercase bg-slate-700/50 text-slate-400 px-2 py-1 rounded">Em
+                                    breve</span></span>
                         </a>
                     </div>
                     <div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
                         <div class="flex -space-x-2">
-                            <img class="w-8 h-8 rounded-full border-2 border-slate-800" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt="User">
-                            <img class="w-8 h-8 rounded-full border-2 border-slate-800" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt="User">
-                            <img class="w-8 h-8 rounded-full border-2 border-slate-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-800"
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64"
+                                alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-800"
+                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64"
+                                alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-800"
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64"
+                                alt="User">
                         </div>
                         <p>Junte-se a milhares de profissionais</p>
                     </div>
@@ -141,7 +182,9 @@
                 <!-- Card Simulador -->
                 <div class="relative animate-on-scroll animate-delay-200">
                     <!-- Elemento decorativo de fundo -->
-                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-30"></div>
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 rounded-2xl blur-xl opacity-30">
+                    </div>
 
                     <div class="relative glass-card p-6 sm:p-8 card-glow">
                         <div class="flex justify-between items-center mb-6">
@@ -153,27 +196,35 @@
                             <div>
                                 <label class="block text-sm font-semibold text-slate-300 mb-2">Salário Bruto CLT</label>
                                 <div class="relative">
-                                    <input type="text" id="input-clt" value="6000" class="input-field w-full pl-4 pr-4 py-3.5 rounded-xl text-white font-medium text-lg" placeholder="R$ 0,00">
+                                    <input type="text" id="input-clt" value="6000"
+                                        class="input-field w-full pl-4 pr-4 py-3.5 rounded-xl text-white font-medium text-lg"
+                                        placeholder="R$ 0,00">
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-slate-300 mb-2">Proposta CNPJ (Mensal)</label>
+                                <label class="block text-sm font-semibold text-slate-300 mb-2">Proposta CNPJ
+                                    (Mensal)</label>
                                 <div class="relative">
-                                    <input type="text" id="input-pj" value="9500" class="input-field w-full pl-4 pr-4 py-3.5 rounded-xl text-white font-medium text-lg" placeholder="R$ 0,00">
+                                    <input type="text" id="input-pj" value="9500"
+                                        class="input-field w-full pl-4 pr-4 py-3.5 rounded-xl text-white font-medium text-lg"
+                                        placeholder="R$ 0,00">
                                 </div>
                             </div>
 
                             <!-- Resultados -->
                             <div class="glass rounded-xl p-5 mt-6">
-                                <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider mb-4">Estimativa Anual Líquida</p>
+                                <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider mb-4">Estimativa
+                                    Anual Líquida</p>
 
                                 <div class="flex justify-between items-center mb-2">
                                     <span class="text-slate-400">CLT (com benefícios)</span>
                                     <span id="res-clt" class="font-bold text-white text-lg">R$ 0,00</span>
                                 </div>
                                 <div class="w-full bg-slate-700/50 rounded-full h-2 mb-4">
-                                    <div id="bar-clt" class="bg-slate-400 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
+                                    <div id="bar-clt"
+                                        class="bg-amber-700/70 h-2 rounded-full transition-all duration-500"
+                                        style="width: 50%"></div>
                                 </div>
 
                                 <div class="flex justify-between items-center mb-2">
@@ -181,7 +232,9 @@
                                     <span id="res-pj" class="font-bold text-lg text-brand">R$ 0,00</span>
                                 </div>
                                 <div class="w-full bg-slate-700/50 rounded-full h-2">
-                                    <div id="bar-pj" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-2 rounded-full transition-all duration-500" style="width: 70%"></div>
+                                    <div id="bar-pj"
+                                        class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 h-2 rounded-full transition-all duration-500"
+                                        style="width: 70%"></div>
                                 </div>
                             </div>
 
@@ -190,28 +243,36 @@
 
                                 <!-- Botão de Análise IA -->
                                 <div class="mb-4">
-                                    <button onclick="handleAnalysisClick()" id="btn-ia" class="tag text-xs font-semibold px-4 py-2 hover:bg-indigo-500/30 transition flex items-center justify-center mx-auto mb-2 cursor-pointer">
+                                    <button onclick="handleAnalysisClick()" id="btn-ia"
+                                        class="tag text-xs font-semibold px-4 py-2 hover:bg-indigo-500/30 transition flex items-center justify-center mx-auto mb-2 cursor-pointer">
                                         Ver Leitura Comparativa
                                     </button>
-                                    <div id="ia-result" class="hidden text-left text-sm text-slate-400 glass p-4 rounded-xl italic"></div>
+                                    <div id="ia-result"
+                                        class="hidden text-left text-sm text-slate-400 glass p-4 rounded-xl italic">
+                                    </div>
                                 </div>
                                 <div class="flex flex-col items-center gap-3 mb-4">
-                                    <button id="btn-analise-pro" class="text-xs font-semibold text-slate-400 glass px-4 py-2.5 rounded-full hover:border-slate-500 hover:text-white transition inline-flex items-center justify-center w-full sm:w-64 cursor-pointer">
+                                    <button id="btn-analise-pro"
+                                        class="text-xs font-semibold text-slate-400 glass px-4 py-2.5 rounded-full hover:border-slate-500 hover:text-white transition inline-flex items-center justify-center w-full sm:w-64 cursor-pointer">
                                         Quero uma analise mais profunda
                                     </button>
                                     <div id="analise-opcoes" class="hidden w-full">
                                         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                                            <a href="https://wa.me/55SEUNUMERO?text=Quero%20uma%20analise%20de%20carreira%20CLT%20x%20PJ" class="text-xs font-semibold text-slate-400 glass px-4 py-2.5 rounded-full hover:border-slate-500 hover:text-white transition inline-flex items-center justify-center w-full sm:w-56">
-                                                    Falar no WhatsApp
+                                            <a href="https://wa.me/55SEUNUMERO?text=Quero%20uma%20analise%20de%20carreira%20CLT%20x%20PJ"
+                                                class="text-xs font-semibold text-slate-400 glass px-4 py-2.5 rounded-full hover:border-slate-500 hover:text-white transition inline-flex items-center justify-center w-full sm:w-56">
+                                                Falar no WhatsApp
                                             </a>
-                                            <a href="mailto:contato@calccltxpj.com.br?subject=Analise%20de%20Carreira%20CLT%20x%20PJ" class="text-xs font-semibold text-slate-400 glass px-4 py-2.5 rounded-full hover:border-slate-500 hover:text-white transition inline-flex items-center justify-center w-full sm:w-56">
-                                                    Enviar por email
+                                            <a href="mailto:contato@calccltxpj.com.br?subject=Analise%20de%20Carreira%20CLT%20x%20PJ"
+                                                class="text-xs font-semibold text-slate-400 glass px-4 py-2.5 rounded-full hover:border-slate-500 hover:text-white transition inline-flex items-center justify-center w-full sm:w-56">
+                                                Enviar por email
                                             </a>
                                         </div>
                                     </div>
                                 </div>
 
-                                <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="block w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-center font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition">
+                                <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441"
+                                    target="_blank"
+                                    class="block w-full bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 text-slate-900 text-center font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition">
                                     Ver Cálculo Completo no App
                                 </a>
                                 <p class="text-xs text-slate-500 mt-3 text-center">
@@ -228,7 +289,8 @@
     <!-- Seção de Confiança/Logos -->
     <div class="py-12 border-y border-slate-800/50">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm font-semibold text-slate-600 uppercase tracking-wider mb-6">Ideal para profissionais de</p>
+            <p class="text-sm font-semibold text-slate-600 uppercase tracking-wider mb-6">Ideal para profissionais de
+            </p>
             <div class="overflow-hidden marquee-fade">
                 <div class="marquee-track text-left opacity-50">
                     <div class="marquee-row">
@@ -273,35 +335,51 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
                 <h2 class="text-3xl font-bold text-white mb-4">Por que usar nosso app?</h2>
-                <p class="text-slate-400 text-lg">Muitas calculadoras online escondem os custos reais. Nosso app considera tudo.</p>
+                <p class="text-slate-400 text-lg">Muitas calculadoras online escondem os custos reais. Nosso app
+                    considera tudo.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Feature 1 -->
                 <div class="glass-card p-6 card-glow animate-on-scroll">
                     <div class="w-12 h-12 feature-icon rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                            </path>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Cálculo Preciso</h3>
-                    <p class="text-slate-400">Consideramos INSS, IRPF, Férias, 13º, FGTS e até custos mensais do CNPJ como contador.</p>
+                    <p class="text-slate-400">Consideramos INSS, IRPF, Férias, 13º, FGTS e até custos mensais do CNPJ
+                        como contador.</p>
                 </div>
 
                 <!-- Feature 2 -->
                 <div class="glass-card p-6 card-glow animate-on-scroll animate-delay-100">
                     <div class="w-12 h-12 feature-icon-green rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Simples Nacional vs Lucro Presumido</h3>
-                    <p class="text-slate-400">O app seleciona automaticamente o melhor anexo tributário para o seu perfil.</p>
+                    <p class="text-slate-400">O app seleciona automaticamente o melhor anexo tributário para o seu
+                        perfil.</p>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="glass-card p-6 card-glow animate-on-scroll animate-delay-200">
                     <div class="w-12 h-12 feature-icon-purple rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                            </path>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Relatórios PDF</h3>
-                    <p class="text-slate-400">Gere um PDF detalhado da simulação para apresentar ao recrutador ou guardar.</p>
+                    <p class="text-slate-400">Gere um PDF detalhado da simulação para apresentar ao recrutador ou
+                        guardar.</p>
                 </div>
             </div>
         </div>
@@ -312,7 +390,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 animate-on-scroll">
                 <h2 class="text-3xl font-bold text-white mb-4">Feito para todos os lados da negociação</h2>
-                <p class="text-slate-400 text-lg">Clareza para alinhar expectativas e fechar acordos com transparência.</p>
+                <p class="text-slate-400 text-lg">Clareza para alinhar expectativas e fechar acordos com transparência.
+                </p>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="glass-card p-6 card-glow animate-on-scroll">
@@ -321,12 +400,12 @@
                     <p class="text-slate-400">Mostre comparativos claros e evite ruídos na conversa sobre CLT vs PJ.</p>
                 </div>
                 <div class="glass-card p-6 card-glow animate-on-scroll animate-delay-100">
-                    <p class="tag-green text-xs uppercase tracking-wider mb-3">Para candidatos</p>
+                    <p class="tag text-xs uppercase tracking-wider mb-3">Para candidatos</p>
                     <h3 class="text-xl font-bold text-white mb-2">Decisões com segurança</h3>
                     <p class="text-slate-400">Entenda o líquido anual e o impacto real de impostos e benefícios.</p>
                 </div>
                 <div class="glass-card p-6 card-glow animate-on-scroll animate-delay-200">
-                    <p class="tag-purple text-xs uppercase tracking-wider mb-3">Para empresas</p>
+                    <p class="tag text-xs uppercase tracking-wider mb-3">Para empresas</p>
                     <h3 class="text-xl font-bold text-white mb-2">Propostas mais competitivas</h3>
                     <p class="text-slate-400">Monte ofertas equilibradas e reduza retrabalho na negociação.</p>
                 </div>
@@ -340,10 +419,16 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 animate-on-scroll">
                 <div class="max-w-2xl">
                     <h2 class="text-3xl font-bold text-white mb-4">Blog e Conteúdo</h2>
-                    <p class="text-slate-400 text-lg">Dicas essenciais sobre carreira, finanças e legislação trabalhista.</p>
+                    <p class="text-slate-400 text-lg">Dicas essenciais sobre carreira, finanças e legislação
+                        trabalhista.</p>
                 </div>
-                <a href="blog/index.html" class="text-indigo-400 font-semibold hover:text-indigo-300 transition flex items-center">
-                    Ver todos os artigos <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <a href="blog/index.html"
+                    class="text-amber-400 font-semibold hover:text-amber-300 transition flex items-center">
+                    Ver todos os artigos <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
                 </a>
             </div>
 
@@ -351,7 +436,8 @@
                 <!-- Blog Post 1 -->
                 <article class="blog-card group flex flex-col h-full animate-on-scroll">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Planejamento Financeiro" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+                            alt="Planejamento Financeiro" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                         <div class="absolute top-4 left-4 tag">Carreira</div>
                     </div>
@@ -361,10 +447,15 @@
                             <span>&bull;</span>
                             <span>5 min de leitura</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">CNPJ tem direito a férias? Entenda como negociar.</h3>
-                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">Muitos profissionais PJ não sabem, mas é possível incluir cláusulas de descanso remunerado no contrato de prestação de serviços...</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition">CNPJ tem
+                            direito a férias? Entenda como negociar.</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">Muitos profissionais PJ não sabem, mas é
+                            possível incluir cláusulas de descanso remunerado no contrato de prestação de serviços...
+                        </p>
                         <div class="mt-auto pt-4 border-t border-slate-800/50 flex items-center">
-                            <a href="blog/clt-vs-pj.html" class="text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 transition">Ler artigo completo</a>
+                            <a href="blog/clt-vs-pj.html"
+                                class="text-sm font-semibold text-amber-400 group-hover:text-amber-300 transition">Ler
+                                artigo completo</a>
                         </div>
                     </div>
                 </article>
@@ -372,9 +463,10 @@
                 <!-- Blog Post 2 -->
                 <article class="blog-card group flex flex-col h-full animate-on-scroll animate-delay-100">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Cálculo de Impostos" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+                            alt="Cálculo de Impostos" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute top-4 left-4 tag-green">Finanças</div>
+                        <div class="absolute top-4 left-4 tag">Finanças</div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex items-center text-xs text-slate-500 mb-3 space-x-2">
@@ -382,10 +474,14 @@
                             <span>&bull;</span>
                             <span>4 min de leitura</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">Simples Nacional ou Lucro Presumido: Qual o melhor para TI?</h3>
-                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">A escolha do regime tributário correto pode economizar milhares de reais por ano. Descubra qual anexo se aplica ao seu CNAE...</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition">Simples
+                            Nacional ou Lucro Presumido: Qual o melhor para TI?</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">A escolha do regime tributário correto pode
+                            economizar milhares de reais por ano. Descubra qual anexo se aplica ao seu CNAE...</p>
                         <div class="mt-auto pt-4 border-t border-slate-800/50 flex items-center">
-                            <a href="blog/beneficios-clt.html" class="text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 transition">Ler artigo completo</a>
+                            <a href="blog/beneficios-clt.html"
+                                class="text-sm font-semibold text-amber-400 group-hover:text-amber-300 transition">Ler
+                                artigo completo</a>
                         </div>
                     </div>
                 </article>
@@ -393,9 +489,10 @@
                 <!-- Blog Post 3 -->
                 <article class="blog-card group flex flex-col h-full animate-on-scroll animate-delay-200">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Contrato de Trabalho" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
+                            alt="Contrato de Trabalho" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute top-4 left-4 tag-purple">Legislação</div>
+                        <div class="absolute top-4 left-4 tag">Legislação</div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex items-center text-xs text-slate-500 mb-3 space-x-2">
@@ -403,10 +500,14 @@
                             <span>&bull;</span>
                             <span>6 min de leitura</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">O que muda com a nova Reforma Tributária para CNPJs?</h3>
-                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">Fique por dentro das discussões mais recentes sobre a reforma tributária e como ela pode impactar a alíquota efetiva...</p>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition">O que muda
+                            com a nova Reforma Tributária para CNPJs?</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">Fique por dentro das discussões mais
+                            recentes sobre a reforma tributária e como ela pode impactar a alíquota efetiva...</p>
                         <div class="mt-auto pt-4 border-t border-slate-800/50 flex items-center">
-                            <a href="blog/reforma-tributaria.html" class="text-sm font-semibold text-indigo-400 group-hover:text-indigo-300 transition">Ler artigo completo</a>
+                            <a href="blog/reforma-tributaria.html"
+                                class="text-sm font-semibold text-amber-400 group-hover:text-amber-300 transition">Ler
+                                artigo completo</a>
                         </div>
                     </div>
                 </article>
@@ -423,17 +524,24 @@
                     <p class="text-slate-500 mt-2">Tome a melhor decisão para sua carreira.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 items-center">
-                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank" class="h-12 w-56">
-                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1599388800" alt="Baixe na App Store" class="h-12 w-full object-contain scale-105">
+                    <a href="https://apps.apple.com/br/app/calculadora-clt-x-pj/id6755878441" target="_blank"
+                        class="h-12 w-56">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1599388800"
+                            alt="Baixe na App Store" class="h-12 w-full object-contain scale-105">
                     </a>
                     <!-- Botão Footer Android -->
-                    <a href="android-waitlist.html" class="glass flex items-center justify-center h-12 w-56 rounded-lg text-slate-500 hover:text-white hover:border-slate-500 transition select-none">
-                        <svg class="w-5 h-5 mr-2 opacity-50" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z"/></svg>
+                    <a href="android-waitlist.html"
+                        class="glass flex items-center justify-center h-12 w-56 rounded-lg text-slate-500 hover:text-white hover:border-slate-500 transition select-none">
+                        <svg class="w-5 h-5 mr-2 opacity-50" viewBox="0 0 512 512" fill="currentColor">
+                            <path
+                                d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.2 37.2 60 60.1c5.1-8.5 5.1-54.7-3.9-63.2zM36.7 496l266-266.1-60.1-60.1L36.7 496z" />
+                        </svg>
                         <span class="text-sm font-medium">Android: Em breve</span>
                     </a>
                 </div>
             </div>
-            <div class="border-t border-slate-800/50 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <div
+                class="border-t border-slate-800/50 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
                 <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="blog/index.html" class="hover:text-white transition">Blog</a>
@@ -512,4 +620,5 @@
         });
     </script>
 </body>
+
 </html>

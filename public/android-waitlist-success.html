@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro confirmado | Calculadora CLT x CNPJ</title>
     <meta name="description" content="Confirmacao do cadastro para aviso do app Android.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="antialiased">
     <nav class="navbar-glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <a href="index.html" class="flex items-center gap-3">
-                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
-                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <img src="logo.jpg" alt="CLT x PJ Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-amber-500/25 object-cover">
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x
+                        CNPJ</span>
                     <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="blog/index.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
-                    <a href="privacy.html" class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
+                    <a href="privacy.html"
+                        class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
                     <a href="terms.html" class="text-slate-400 hover:text-white font-medium transition">Termos</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
                     <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
-                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
                     </svg>
                 </button>
             </div>
@@ -41,30 +51,42 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
             <div class="flex flex-col p-4 space-y-3">
-                <a href="index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
-                <a href="blog/index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
-                <a href="privacy.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
-                <a href="terms.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
+                <a href="index.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="blog/index.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="privacy.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="terms.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="glass-card p-8 text-center animate-scale">
-            <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-3xl">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <div
+                class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-3xl">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
             </div>
             <h1 class="text-3xl font-extrabold text-white mb-3">Cadastro confirmado</h1>
             <p class="text-slate-400 mb-8">Obrigado! Vamos avisar assim que o app Android estiver disponivel.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="index.html" class="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition">Voltar para a home</a>
-                <a href="blog/index.html" class="px-6 py-3 rounded-xl glass text-slate-300 font-semibold hover:text-white hover:border-slate-500 transition">Ler o blog</a>
+                <a href="index.html"
+                    class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition">Voltar
+                    para a home</a>
+                <a href="blog/index.html"
+                    class="px-6 py-3 rounded-xl glass text-slate-300 font-semibold hover:text-white hover:border-slate-500 transition">Ler
+                    o blog</a>
             </div>
         </div>
     </main>
 
     <footer class="footer-glass py-8">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+        <div
+            class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="index.html" class="hover:text-white transition">Home</a>
@@ -122,4 +144,5 @@
         });
     </script>
 </body>
+
 </html>

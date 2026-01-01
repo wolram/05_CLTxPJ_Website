@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLT x PJ: como calcular o valor justo | Blog</title>
     <meta name="description" content="Guia rapido para comparar CLT e PJ e chegar a um valor justo de negociacao.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body class="antialiased">
     <nav class="navbar-glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <a href="../index.html" class="flex items-center gap-3">
-                    <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded-xl font-bold text-xl shadow-lg shadow-purple-500/25">CP</div>
-                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x CNPJ</span>
+                    <img src="../logo.jpg" alt="CLT x PJ Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-amber-500/25 object-cover">
+                    <span class="font-bold text-white text-lg tracking-tight hidden sm:inline">Calculadora CLT x
+                        CNPJ</span>
                     <span class="font-bold text-white text-lg tracking-tight sm:hidden">CLT x CNPJ</span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
-                    <a href="../privacy.html" class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
+                    <a href="../privacy.html"
+                        class="text-slate-400 hover:text-white font-medium transition">Privacidade</a>
                     <a href="../terms.html" class="text-slate-400 hover:text-white font-medium transition">Termos</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition" aria-label="Menu">
                     <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
-                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
                     </svg>
                 </button>
             </div>
@@ -41,10 +51,14 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
             <div class="flex flex-col p-4 space-y-3">
-                <a href="../index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
-                <a href="index.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
-                <a href="../privacy.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
-                <a href="../terms.html" class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
+                <a href="../index.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Home</a>
+                <a href="index.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Blog</a>
+                <a href="../privacy.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Privacidade</a>
+                <a href="../terms.html"
+                    class="menu-item text-slate-300 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/5 transition">Termos</a>
             </div>
         </div>
     </nav>
@@ -52,11 +66,13 @@
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <article class="glass-card p-6 sm:p-8 animate-on-scroll">
             <p class="tag text-xs uppercase tracking-wider mb-3">Guia</p>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">CLT x PJ: como calcular o valor justo na negociacao</h1>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">CLT x PJ: como calcular o valor justo na
+                negociacao</h1>
             <div class="text-sm text-slate-500 mb-8">20 Dez, 2024 · 5 min de leitura</div>
 
             <div class="space-y-6 text-slate-300 leading-relaxed">
-                <p>Para comparar CLT e PJ, transforme tudo em valor mensal liquido. Isso reduz ruido e facilita a conversa com a empresa.</p>
+                <p>Para comparar CLT e PJ, transforme tudo em valor mensal liquido. Isso reduz ruido e facilita a
+                    conversa com a empresa.</p>
 
                 <h2 class="text-xl font-bold text-white">1) Liste o que entra na conta</h2>
                 <ul class="list-disc pl-5 space-y-2 text-slate-400">
@@ -65,10 +81,12 @@
                 </ul>
 
                 <h2 class="text-xl font-bold text-white">2) Converta para valor liquido</h2>
-                <p class="text-slate-400">Use uma estimativa simples: CLT (13,33 salarios/ano) com desconto medio de impostos; PJ (12 meses) menos impostos e custos. O importante e comparar cenarios.</p>
+                <p class="text-slate-400">Use uma estimativa simples: CLT (13,33 salarios/ano) com desconto medio de
+                    impostos; PJ (12 meses) menos impostos e custos. O importante e comparar cenarios.</p>
 
                 <h2 class="text-xl font-bold text-white">3) Considere risco e estabilidade</h2>
-                <p class="text-slate-400">Se o PJ oferecer pouca margem sobre a CLT, o risco pode nao compensar. Muitos profissionais buscam 30% a 40% de aumento para fazer a troca.</p>
+                <p class="text-slate-400">Se o PJ oferecer pouca margem sobre a CLT, o risco pode nao compensar. Muitos
+                    profissionais buscam 30% a 40% de aumento para fazer a troca.</p>
 
                 <h2 class="text-xl font-bold text-white">Checklist rapido</h2>
                 <ul class="list-disc pl-5 space-y-2 text-slate-400">
@@ -77,17 +95,21 @@
                     <li>O valor PJ cobre beneficios e risco?</li>
                 </ul>
 
-                <p class="text-slate-400">Use o simulador na pagina inicial para estimar e ajustar os valores antes de fechar a proposta.</p>
+                <p class="text-slate-400">Use o simulador na pagina inicial para estimar e ajustar os valores antes de
+                    fechar a proposta.</p>
 
                 <div class="pt-6">
-                    <a href="../index.html#como-funciona" class="inline-block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition">Usar o Simulador</a>
+                    <a href="../index.html#como-funciona"
+                        class="inline-block bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition">Usar
+                        o Simulador</a>
                 </div>
             </div>
         </article>
     </main>
 
     <footer class="footer-glass py-8">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+        <div
+            class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Calculadora CLT x CNPJ. Todos os direitos reservados.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="index.html" class="hover:text-white transition">Blog</a>
@@ -145,4 +167,5 @@
         });
     </script>
 </body>
+
 </html>

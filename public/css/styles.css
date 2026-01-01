@@ -2,24 +2,24 @@
    DARK FUTURISTIC THEME - GLASSMORPHISM
    ============================================ */
 
-/* CSS Variables */
+/* CSS Variables - NAVY + GOLD THEME */
 :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-tertiary: #1a1a2e;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-hover: rgba(255, 255, 255, 0.06);
-    --accent-primary: #6366f1;
-    --accent-secondary: #8b5cf6;
-    --accent-tertiary: #a855f7;
-    --accent-cyan: #06b6d4;
-    --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+    --bg-primary: #0d1a2d;
+    --bg-secondary: #152238;
+    --bg-tertiary: #1a2744;
+    --glass-bg: rgba(201, 162, 39, 0.02);
+    --glass-border: rgba(201, 162, 39, 0.1);
+    --glass-hover: rgba(201, 162, 39, 0.05);
+    --accent-primary: #c9a227;
+    --accent-secondary: #d4af37;
+    --accent-tertiary: #e6c547;
+    --accent-cyan: #c9a227;
+    --accent-gradient: linear-gradient(135deg, #c9a227, #d4af37, #e6c547);
     --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --glow-primary: rgba(99, 102, 241, 0.4);
-    --glow-secondary: rgba(139, 92, 246, 0.3);
+    --text-secondary: #a0aec0;
+    --text-muted: #718096;
+    --glow-primary: rgba(201, 162, 39, 0.15);
+    --glow-secondary: rgba(212, 175, 55, 0.1);
 }
 
 /* Global Styles */
@@ -74,12 +74,12 @@ body::before {
 }
 
 .glass-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-4px);
     box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 40px var(--glow-secondary);
+        0 0 20px var(--glow-secondary);
 }
 
 /* Navbar Glass */
@@ -104,7 +104,7 @@ body::before {
 
 .bg-brand:hover {
     opacity: 0.9;
-    box-shadow: 0 0 30px var(--glow-primary);
+    box-shadow: 0 0 15px var(--glow-primary);
 }
 
 /* Glow Effects */
@@ -146,7 +146,7 @@ body::before {
 }
 
 .card-glow:hover::before {
-    opacity: 0.3;
+    opacity: 0.12;
 }
 
 /* Marquee */
@@ -169,8 +169,13 @@ body::before {
 }
 
 @keyframes marquee-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Inputs - Glass Style */
@@ -254,8 +259,13 @@ body::before {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Progress Bars */
@@ -277,18 +287,18 @@ body::before {
 
 /* Feature Cards */
 .feature-icon {
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(201, 162, 39, 0.3);
 }
 
 .feature-icon-green {
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.2);
+    background: rgba(201, 162, 39, 0.15);
+    border: 1px solid rgba(201, 162, 39, 0.35);
 }
 
 .feature-icon-purple {
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    background: rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(201, 162, 39, 0.25);
 }
 
 /* Blog Cards */
@@ -317,31 +327,31 @@ body::before {
 
 /* Tags/Badges */
 .tag {
-    background: rgba(99, 102, 241, 0.15);
-    color: #a5b4fc;
+    background: rgba(201, 162, 39, 0.15);
+    color: #e6c547;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 600;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(201, 162, 39, 0.3);
 }
 
 .tag-green {
-    background: rgba(34, 197, 94, 0.15);
-    color: #86efac;
-    border-color: rgba(34, 197, 94, 0.2);
+    background: rgba(201, 162, 39, 0.2);
+    color: #e6c547;
+    border-color: rgba(201, 162, 39, 0.4);
 }
 
 .tag-purple {
-    background: rgba(168, 85, 247, 0.15);
-    color: #d8b4fe;
-    border-color: rgba(168, 85, 247, 0.2);
+    background: rgba(201, 162, 39, 0.12);
+    color: #d4af37;
+    border-color: rgba(201, 162, 39, 0.25);
 }
 
 .tag-cyan {
-    background: rgba(6, 182, 212, 0.15);
-    color: #67e8f9;
-    border-color: rgba(6, 182, 212, 0.2);
+    background: rgba(201, 162, 39, 0.1);
+    color: #c9a227;
+    border-color: rgba(201, 162, 39, 0.2);
 }
 
 /* Footer */
@@ -382,8 +392,15 @@ body::before {
 
 /* Floating Elements Animation */
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .float-animation {
@@ -392,8 +409,15 @@ body::before {
 
 /* Pulse Glow */
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px var(--glow-primary); }
-    50% { box-shadow: 0 0 40px var(--glow-primary), 0 0 60px var(--glow-secondary); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--glow-primary);
+    }
+
+    50% {
+        box-shadow: 0 0 40px var(--glow-primary), 0 0 60px var(--glow-secondary);
+    }
 }
 
 .pulse-glow {
@@ -447,6 +471,7 @@ body::before {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -458,6 +483,7 @@ body::before {
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-10px);
@@ -476,13 +502,33 @@ body::before {
     transform: translateX(0);
 }
 
-.menu-item:nth-child(1) { transition-delay: 0.05s; }
-.menu-item:nth-child(2) { transition-delay: 0.1s; }
-.menu-item:nth-child(3) { transition-delay: 0.15s; }
-.menu-item:nth-child(4) { transition-delay: 0.2s; }
-.menu-item:nth-child(5) { transition-delay: 0.25s; }
-.menu-item:nth-child(6) { transition-delay: 0.3s; }
-.menu-item:nth-child(7) { transition-delay: 0.35s; }
+.menu-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.menu-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.menu-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.menu-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.menu-item:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+.menu-item:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+.menu-item:nth-child(7) {
+    transition-delay: 0.35s;
+}
 
 /* Hamburger icon animation */
 .hamburger-icon {
@@ -503,6 +549,7 @@ body::before {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -514,6 +561,7 @@ body::before {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -525,6 +573,7 @@ body::before {
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -537,6 +586,7 @@ body::before {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -549,6 +599,7 @@ body::before {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -568,11 +619,25 @@ body::before {
 }
 
 /* Staggered Animation Delays */
-.animate-delay-100 { transition-delay: 0.1s; }
-.animate-delay-200 { transition-delay: 0.2s; }
-.animate-delay-300 { transition-delay: 0.3s; }
-.animate-delay-400 { transition-delay: 0.4s; }
-.animate-delay-500 { transition-delay: 0.5s; }
+.animate-delay-100 {
+    transition-delay: 0.1s;
+}
+
+.animate-delay-200 {
+    transition-delay: 0.2s;
+}
+
+.animate-delay-300 {
+    transition-delay: 0.3s;
+}
+
+.animate-delay-400 {
+    transition-delay: 0.4s;
+}
+
+.animate-delay-500 {
+    transition-delay: 0.5s;
+}
 
 /* Animate from Left */
 .animate-from-left {
@@ -631,11 +696,25 @@ body::before {
         transition: opacity 0.35s ease-out, transform 0.35s ease-out;
     }
 
-    .animate-delay-100 { transition-delay: 0.05s; }
-    .animate-delay-200 { transition-delay: 0.1s; }
-    .animate-delay-300 { transition-delay: 0.15s; }
-    .animate-delay-400 { transition-delay: 0.2s; }
-    .animate-delay-500 { transition-delay: 0.25s; }
+    .animate-delay-100 {
+        transition-delay: 0.05s;
+    }
+
+    .animate-delay-200 {
+        transition-delay: 0.1s;
+    }
+
+    .animate-delay-300 {
+        transition-delay: 0.15s;
+    }
+
+    .animate-delay-400 {
+        transition-delay: 0.2s;
+    }
+
+    .animate-delay-500 {
+        transition-delay: 0.25s;
+    }
 }
 
 /* Reduce motion for accessibility */

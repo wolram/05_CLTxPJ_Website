@@ -61,14 +61,14 @@ function calculate() {
 
     if (pjTotal > cltTotal) {
         const diff = pjTotal - cltTotal;
-        verdict.innerHTML = `CNPJ rende aprox. <span class="text-green-600 font-bold">+${formatMoney(diff)}</span> por ano`;
-        resPj.className = "font-bold text-green-600 text-lg";
-        barPj.className = "bg-green-600 h-2 rounded-full transition-all duration-500";
+        verdict.innerHTML = `CNPJ rende aprox. <span class="text-amber-400 font-bold">+${formatMoney(diff)}</span> por ano`;
+        resPj.className = "font-bold text-amber-400 text-lg";
+        barPj.className = "bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-400 h-2 rounded-full transition-all duration-500";
     } else {
         const diff = cltTotal - pjTotal;
-        verdict.innerHTML = `CLT rende aprox. <span class="text-blue-600 font-bold">+${formatMoney(diff)}</span> por ano`;
-        resPj.className = "font-bold text-blue-600 text-lg";
-        barPj.className = "bg-blue-600 h-2 rounded-full transition-all duration-500";
+        verdict.innerHTML = `CLT rende aprox. <span class="text-amber-300 font-bold">+${formatMoney(diff)}</span> por ano`;
+        resPj.className = "font-bold text-slate-400 text-lg";
+        barPj.className = "bg-slate-500 h-2 rounded-full transition-all duration-500";
     }
 }
 
